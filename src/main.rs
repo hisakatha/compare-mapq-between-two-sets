@@ -54,7 +54,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // CSV header
     //println!("read_name,top_mapq_{},count_{},top_mapq_{},count_{},abs_diff_mapq", set1_name, set1_name, set2_name, set2_name);
     writeln!(buffer, "read_name,top_mapq_{},count_{},top_mapq_{},count_{},abs_diff_mapq", set1_name, set1_name, set2_name, set2_name)?;
-    while bam.read(&mut record)? {
+    while let Some(result) = bam.read(&mut record) {
+        result.expect("Failed to parse a record");
         current_qname = std::str::from_utf8(record.qname())?.to_string();
         current_tid = record.tid();
         current_mapq = record.mapq();

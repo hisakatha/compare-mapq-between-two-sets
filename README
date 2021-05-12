@@ -1,6 +1,0 @@
-This program takes an alignment BAM file and two sets of chromosome (reference) names,
-and outputs the highest MapQ scores in multiple alignment hits of one read for each set of chromosomes.
-An alignment BAM file MUST be sorted by name beforehand.
-
-An output for a read will be as follows:
-read_name,top_mapq_in_set1,count_in_set1,top_mapq_in_set2,count_in_set2,abs_diff_in_mapq
