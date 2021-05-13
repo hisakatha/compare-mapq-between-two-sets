@@ -25,3 +25,9 @@ then the output will be as follows:
 read1,30,2,100,2,70
 read2,0,1,200,2,200
 ```
+
+# How to install
+Please set up a Rust environment, and then
+
+- `cargo build --release` and find the executable at `target/release`
+- or `cargo install --path .`
